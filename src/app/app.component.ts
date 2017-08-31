@@ -9,10 +9,13 @@ export class AppComponent implements OnInit {
 
     serverAlive: boolean = false;
 
+    copyright: string;
+
     constructor(private toastr: ToastsManager,
                 private vRef: ViewContainerRef) {
-
-      toastr.setRootViewContainerRef(vRef);
+      
+        toastr.setRootViewContainerRef(vRef);
+        this.copyright = (new Date()).getFullYear().toString();
 
     }
 

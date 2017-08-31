@@ -19,13 +19,15 @@ import { routing, appRoutingProviders } from './app.routing';
 import * as components from './app/components';
 
 // Global Components 
+import { NavbarComponent } from './app/shared/navbar/navbar.component';
 
 // Services
+import { HealthService } from './app/services/health.service';
 
 import './rxjs-extensions';
 
 // ag-grid
-import {AgGridModule} from 'ag-grid-angular/main';
+import { AgGridModule } from 'ag-grid-angular/main';
 
 @NgModule({
     imports: [
@@ -41,11 +43,13 @@ import {AgGridModule} from 'ag-grid-angular/main';
     ],
     declarations: [
       AppComponent,
+      NavbarComponent,
       components.HomePage,
       components.AboutPage
     ],
     providers: [
-      appRoutingProviders
+      appRoutingProviders,
+      HealthService
     ],
     bootstrap: [ AppComponent ],
 })

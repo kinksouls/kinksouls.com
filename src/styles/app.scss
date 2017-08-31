@@ -10,6 +10,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~ng2-toastr/bundles/ng2-toastr.min.css';
 
+* {
+  border-radius: 0 !important;
+}
+
 html, body {
   background-color: #333333;
 }
@@ -19,3 +23,7 @@ body {
 }
 
 
+footer {
+  text-align: center;
+  color: white;
+}
