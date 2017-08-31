@@ -1,0 +1,6 @@
+/build
+/node_modules
+*.sublime-project
+*.sublime-workspace
+yarn.lock
+package-lock.json
