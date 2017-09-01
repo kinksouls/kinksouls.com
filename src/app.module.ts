@@ -22,6 +22,7 @@ import * as components from './app/components';
 import { NavbarComponent } from './app/shared/navbar/navbar.component';
 
 // Services
+import { api } from './api.config';
 import { HealthService } from './app/services/health.service';
 
 import './rxjs-extensions';
@@ -48,6 +49,7 @@ import { AgGridModule } from 'ag-grid-angular/main';
       components.AboutPage
     ],
     providers: [
+      api,
       appRoutingProviders,
       HealthService
     ],

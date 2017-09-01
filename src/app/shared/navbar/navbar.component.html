@@ -1,0 +1,38 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- 
+                data-target="#collapsenav1" -->
+        <button class="navbar-toggler" type="button" 
+                data-toggle="collapse" (click)="isCollapsed = !isCollapsed"
+                aria-controls="collapsenav1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../../../images/kinksouls-header.png" /></a>
+
+        <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="collapsenav1">
+
+            <ul class="navbar-nav mr-auto" >
+
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/', 'home']">Home</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/', 'about']">About</a>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/', 'home']">Login</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/', 'home']">Signup</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- /.navbar -->

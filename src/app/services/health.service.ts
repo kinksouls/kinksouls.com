@@ -5,11 +5,12 @@ import { api } from '../../api.config';
 @Injectable()
 export class HealthService {
 
-    private url: string = api.home+'/'+api.version+'/test';
+    private url: string = this.api.home+'/'+this.api.version+'/test';
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private api: api) {
 
         console.log('api version: '+api.version);
+        console.log('api secret: '+api.secret);
     }
 
     serverHealth() : Promise<string> {
