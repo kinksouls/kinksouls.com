@@ -8,13 +8,13 @@ import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
 
 @Component({
     selector: 'app-home',
-    templateUrl: '../templates/home.template.html'
+    templateUrl: './templates/home.template.html'
 })
 export class HomePage {
 	
-		public statusMessage: String;
+    public statusMessage: String;
 
-		public rowData: any[];
+    public rowData: any[];
 
     public interval: number = 2500;
     public timerInterval: any;

@@ -1,11 +1,11 @@
 import {Routes, RouterModule} from '@angular/router';
-import {HomePage} from './app/components/home.page';
-import {AboutPage} from './app/components/about.page';
+import * as pages from './app/pages/_all.pages';
+
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
-    {path: 'home', component: HomePage},
-    {path: 'about', component: AboutPage}
+    {path: 'home', component: pages.HomePage},
+    {path: 'about', component: pages.AboutPage}
 ];
 
 export const appRoutingProviders: any[] = [];

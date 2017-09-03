@@ -3,16 +3,16 @@ import { HealthService } from '../services/health.service';
 
 @Component({
     selector: 'app-about',
-    templateUrl: '../templates/about.template.html'
+    templateUrl: './templates/about.template.html'
 })
 export class AboutPage implements OnInit {
 
-    serverHealth :string;
+    serverHealth : string;
 
-    constructor(private _heath: HealthService) {
+    constructor(private _heath : HealthService) {
     }
 
-    ngOnInit(): void {
+    ngOnInit() : void {
         this._heath.serverHealth().then((health) => this.serverHealth = health);
     }
 }

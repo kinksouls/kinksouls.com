@@ -14,15 +14,12 @@ import { AppComponent } from './app/app.component';
 import { routing, appRoutingProviders } from './app.routing';
 
 // Pages
-//import { HomePage } from './app/components/home.page';
-//import { AboutPage } from './app/components/about.page';
-import * as components from './app/components';
+import * as pages from './app/pages/_all.pages';
 
 // Global Components 
-import { NavbarComponent } from './app/shared/navbar/navbar.component';
+import * as components from './app/components/_all.components';
 
 // Services
-import { api } from './api.config';
 import { HealthService } from './app/services/health.service';
 
 import './rxjs-extensions';
@@ -44,12 +41,11 @@ import { AgGridModule } from 'ag-grid-angular/main';
     ],
     declarations: [
       AppComponent,
-      NavbarComponent,
-      components.HomePage,
-      components.AboutPage
+      components.NavbarComponent,
+      pages.HomePage,
+      pages.AboutPage
     ],
     providers: [
-      api,
       appRoutingProviders,
       HealthService
     ],
