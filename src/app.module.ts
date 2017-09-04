@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import { AUTH_PROVIDERS } from 'angular2-jwt';
+
 // Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
@@ -12,15 +14,16 @@ import { ToastModule } from 'ng2-toastr/ng2-toastr';
 // App Component
 import { AppComponent } from './app/app.component';
 import { routing, appRoutingProviders } from './app.routing';
+import { SessionGuard } from './session.guard';
 
 // Pages
-import * as pages from './app/pages/_all.pages';
+import * as page from './app/pages/_all.pages';
 
 // Global Components 
-import * as components from './app/components/_all.components';
+import * as component from './app/components/_all.components';
 
 // Services
-import { HealthService } from './app/services/health.service';
+import * as service from './app/services/_all.services';
 
 import './rxjs-extensions';
 
@@ -41,13 +44,17 @@ import { AgGridModule } from 'ag-grid-angular/main';
     ],
     declarations: [
       AppComponent,
-      components.NavbarComponent,
-      pages.HomePage,
-      pages.AboutPage
+      component.NavbarComponent,
+      page.HomePage,
+      page.AboutPage,
+      page.LoginPage,
+      page.SignupPage
     ],
     providers: [
       appRoutingProviders,
-      HealthService
+      SessionGuard, AUTH_PROVIDERS,
+      service.AuthService,
+      service.HealthService
     ],
     bootstrap: [ AppComponent ],
 })

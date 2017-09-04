@@ -1,13 +1,17 @@
-import {Routes, RouterModule} from '@angular/router';
-import * as pages from './app/pages/_all.pages';
-
+import { Routes, RouterModule } from '@angular/router';
+import { SessionGuard } from './session.guard';
+import * as page from './app/pages/_all.pages';
 
 const routes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
-    {path: 'home', component: pages.HomePage},
-    {path: 'about', component: pages.AboutPage}
+    { path: '',       component: page.LoginPage  },
+    { path: 'login',  component: page.LoginPage  },
+    { path: 'signup', component: page.SignupPage },
+    { path: 'home',   component: page.HomePage, canActivate:[SessionGuard] },
+    { path: 'about',  component: page.AboutPage  },
+    { path: '**',     component: page.SignupPage }
 ];
 
 export const appRoutingProviders: any[] = [];
 
 export const routing = RouterModule.forRoot(routes, {useHash: true});
+

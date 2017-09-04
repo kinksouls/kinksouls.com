@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
@@ -11,7 +12,8 @@ export class AppComponent implements OnInit {
 
     copyright: string;
 
-    constructor(private toastr: ToastsManager,
+    constructor(private router: Router,
+                private toastr: ToastsManager,
                 private vRef: ViewContainerRef) {
       
         toastr.setRootViewContainerRef(vRef);
