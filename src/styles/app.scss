@@ -22,6 +22,13 @@ body {
   margin-bottom: 50px;
 }
 
+a, a:focus {
+  color: rgba(225,78,26,0.98) !important;  
+}
+a:hover {
+  color: rgba(225,78,26,0.58) !important;  
+}
+
 footer {
   text-align: center;
   color: white;
@@ -56,8 +63,9 @@ nav.navbar .container .navbar-collapse.show {
   height: 100%;
 }
 .navbar-nav .nav-link {
+  color: lightgrey !important;
   font-weight: bold;
-  padding-top: 20px;
+  padding-top: 18px;
   height: 100%;
 }
 .navbar-nav .nav-link:hover {
@@ -91,4 +99,23 @@ nav.navbar .container .navbar-collapse.show .navbar-nav .active > .nav-link {
   -webkit-box-shadow: inset 0px -5px 0px 0px rgba(225,78,26,0);
   -moz-box-shadow: inset 0px -5px 0px 0px rgba(225,78,26,0);
   box-shadow: inset 0px -5px 0px 0px rgba(225,78,26,0);
+}
+
+ul.nav-pills {
+  margin-bottom: 15px;
+}
+ul.nav-pills li.nav-item {
+  margin-right: 10px;
+  font-size: 25px;
+}
+ul.nav-pills li.nav-item a.nav-link {
+  color: rgba(225,78,26,0.98) !important;
+}
+ul.nav-pills li.nav-item a.nav-link:hover {
+  color: rgb(43, 47, 51) !important;
+  background: rgba(225,78,26,0.98) !important;
+}
+ul.nav-pills li.nav-item a.nav-link.active {
+  color: rgb(43, 47, 51) !important;
+  background: rgba(225,78,26,0.98) !important;
 }

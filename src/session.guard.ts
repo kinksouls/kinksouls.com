@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import { AuthService } from './app/services/auth.service';
-import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class SessionGuard implements CanActivate {
     
     constructor(private router: Router,
-                private authService: AuthService) {}
+                private auth: AuthService) {}
     
-    canActivate() {
+    canActivate() { console.log( 'Active Session: ' + this.auth.inSession() );
 
-        if(tokenNotExpired()) {
+        if( this.auth.inSession() === true ) {
             return true;
         }
 
+        this.auth.logout();
         this.router.navigate(['/login']);
         return false;
     }

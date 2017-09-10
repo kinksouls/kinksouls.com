@@ -5,8 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { AUTH_PROVIDERS } from 'angular2-jwt';
-
 // Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
@@ -47,14 +45,18 @@ import { AgGridModule } from 'ag-grid-angular/main';
       component.NavbarComponent,
       page.HomePage,
       page.AboutPage,
+      page.LegalPage,
+      page.ProfilePage,
+      page.UserPage,
       page.LoginPage,
       page.SignupPage
     ],
     providers: [
       appRoutingProviders,
-      SessionGuard, AUTH_PROVIDERS,
+      SessionGuard,
       service.AuthService,
-      service.HealthService
+      service.HealthService,
+      service.UsersService
     ],
     bootstrap: [ AppComponent ],
 })

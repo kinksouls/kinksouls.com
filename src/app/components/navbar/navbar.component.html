@@ -22,7 +22,16 @@
 
             </ul>
 
-            <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+            <ul *ngIf="inSession" class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/', 'profile']">Profile</a>
+                </li>
+                <li class="nav-item" (click)="logout()">
+                    <a class="nav-link" >Logout</a>
+                </li>
+            </ul>
+
+            <ul *ngIf="!inSession" class="nav navbar-nav navbar-right" style="margin-right: 20px;">
                 <li class="nav-item" [routerLinkActive]="['active']">
                     <a class="nav-link" [routerLink]="['/', 'login']">Login</a>
                 </li>

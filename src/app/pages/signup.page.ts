@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import * as model from '../models/_all.models';
+
 
 @Component({
     selector: 'app-signup',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class SignupPage {
 
+    private account: model.Account;
 }

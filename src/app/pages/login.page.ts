@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { contentHeaders } from '../models/headers';
 
+import { AuthService } from '../services/auth.service';
 
 @Component({
     selector: 'app-login',
@@ -10,27 +11,20 @@ import { contentHeaders } from '../models/headers';
 })
 export class LoginPage {
     
-    constructor(public router: Router, public http: Http) {
+    constructor(private auth: AuthService,
+                private router: Router, 
+                private http: Http) {
+        if(auth.inSession()) {
+            router.navigate(['/profile']);
+        }
     }
-  
-    login(event, username, password) {
-      event.preventDefault();
-      let body = JSON.stringify({ username, password });
-      this.http.post('http://localhost:3001/sessions/create', body, { headers: contentHeaders })
-        .subscribe(
-          response => {
-            localStorage.setItem('id_token', response.json().id_token);
-            this.router.navigate(['home']);
-          },
-          error => {
-            alert(error.text());
-            console.log(error.text());
-          }
-        );
-    }
-  
-    signup(event) {
-      event.preventDefault();
-      this.router.navigate(['signup']);
+
+    private login(event, username, password) {
+
+        event.preventDefault();
+
+        console.log('un: '+username+'\n pwd: '+this.auth.encrypt(password));
+
+        this.auth.login(username, password);
     }
 }

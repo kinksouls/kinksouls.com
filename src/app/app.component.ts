@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
@@ -14,11 +15,11 @@ export class AppComponent implements OnInit {
 
     constructor(private router: Router,
                 private toastr: ToastsManager,
+                public auth: AuthService,
                 private vRef: ViewContainerRef) {
       
         toastr.setRootViewContainerRef(vRef);
         this.copyright = (new Date()).getFullYear().toString();
-
     }
 
     ngOnInit(): void {
