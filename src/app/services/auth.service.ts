@@ -18,7 +18,7 @@ export class AuthService {
             gender: 'Male, I think',
             orientation: 'Straight Forward',
             role: 'Dominate Test User',
-            age: new Date(1993, 7, 5),
+            age: new Date('July 5, 1993, 00:00:00'),
             lookingFor: 'something special',
             about: 'Hi am a test user, I can put whatever I want here...',
         },
@@ -60,6 +60,12 @@ export class AuthService {
         }
 
         return '';
+    }
+
+    public getAccountProfile(token :string) {
+        if(token === 'test') {
+            this.currentAccount = this.testAccount;
+        }
     }
     
     public login(username :string, password :string): void {
