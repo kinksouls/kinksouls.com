@@ -1,15 +1,39 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES5",
+//     "typeRoots": ["./node_modules/@types"],
+//     "lib": ["dom","es5"],
+//     "module": "commonjs",
+//     "emitDecoratorMetadata": true,
+//     "experimentalDecorators": true,
+//     "sourceMap": true,
+//     "noImplicitReturns": true,
+//     "noUnusedParameters": false,
+//     "noUnusedLocals": false,
+//     "types": ["core-js", "node", "jasmine", "es6-shim"]
+//   },
+//   "compileOnSave": false,
+//   "buildOnSave": false
+// }
+
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "noImplicitReturns": true,
-    "noUnusedParameters": false,
-    "noUnusedLocals": false,
-    "types": ["node", "jasmine", "es6-shim"]
+    "target": "es5",
+    "typeRoots": [ "../node_modules/@types" ],
+    "lib": [ "dom", "es5" ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true
   },
-  "compileOnSave": false,
-  "buildOnSave": false
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false
 }

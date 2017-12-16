@@ -9,6 +9,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
+// For Videos 
+import * as vg from './videogular';
+
 // App Component
 import { AppComponent } from './app/app.component';
 import { routing, appRoutingProviders } from './app.routing';
@@ -36,6 +39,10 @@ import { AgGridModule } from 'ag-grid-angular/main';
       ReactiveFormsModule,
       routing,
       BrowserAnimationsModule,
+      vg.VgCoreModule,
+      vg.VgControlsModule,
+      vg.VgOverlayPlayModule,
+      vg.VgBufferingModule,
       ToastModule.forRoot(),
       NgbModule.forRoot(),
       AgGridModule.withComponents([])

@@ -35,9 +35,11 @@
     "popper.js": "1.11.0",
     "rxjs": "5.4.0",
     "ts-md5": "^1.2.2",
+    "videogular2": "^5.5.1",
     "zone.js": "0.8.10"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.35",
     "@types/es6-shim": "0.31.33",
     "@types/jasmine": "2.5.47",
     "@types/node": "7.0.18",
